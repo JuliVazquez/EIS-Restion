@@ -9,9 +9,10 @@ import { Plato } from '../../interfaces/plato';
 export class PlatoFormComponent implements OnInit {
 
   plato : Plato = {
-    nombre='',
-    precio=0
+    nombre :"",
+    precio : 0
   };
+
   constructor() { }
 
   ngOnInit(): void {
