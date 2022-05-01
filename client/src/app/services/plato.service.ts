@@ -3,15 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Plato } from '../interfaces/plato';
 import { Observable} from 'rxjs';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class PlatoService {
 
-  BASE_URL: string = 'http://localhost:3000'; //servidor
+  BASE_URL: string = 'http://localhost:5000'; //servidor
   constructor( private http : HttpClient) { }
 
   getPlatos(): Observable<Plato[]>{

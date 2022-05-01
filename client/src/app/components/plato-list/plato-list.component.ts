@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Plato } from '../../interfaces/plato';
-//import { PlatoService } from 'src/app/services/plato.service'
+import { PlatoService } from '../../services/plato.service';
+
+
 
 @Component({
   selector: 'app-plato-list',
@@ -9,13 +11,21 @@ import { Plato } from '../../interfaces/plato';
 })
 export class PlatoListComponent implements OnInit {
 
-  //constructor(private platoService: PlatoService) { }
+  constructor(private platoService: PlatoService) { }
 
   //platos: Plato[];
 
   ngOnInit(): void {
-    //this.getPlatos();
+    this.getPlatos();
   }
+
+  getPlatos(){
+    this.platoService.getPlatos().subscribe(
+      res=> console.log(res),
+      err=> console.log(err)
+    )
+  }
+
 
   //deleteProduct(id: string): void {
   //  this.platoService.deletePlato(id).subscribe(

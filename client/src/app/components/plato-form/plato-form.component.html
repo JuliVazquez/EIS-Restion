@@ -1,1 +1,18 @@
-<p>plato-form works!</p>
+
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <div class="card card-body">
+        <form (submit)="submitProduct">
+          <div class="form-group">
+            <input type="text" name="nombre" [(ngModel)]="plato.nombre" class="form-control" placeholder="Nombre" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="price" [(ngModel)]="plato.precio" class="form-control" placeholder="Precio">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
