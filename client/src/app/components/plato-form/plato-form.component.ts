@@ -18,4 +18,7 @@ export class PlatoFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitPlato() {
+    console.log(this.plato)
+  }
 }
