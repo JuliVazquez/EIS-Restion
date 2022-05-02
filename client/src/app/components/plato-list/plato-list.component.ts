@@ -11,9 +11,9 @@ import { PlatoService } from '../../services/plato.service';
 })
 export class PlatoListComponent implements OnInit {
 
-  constructor(private platoService: PlatoService) { }
+  platos : Plato[] = [];
 
-  //platos: Plato[];
+  constructor(private platoService: PlatoService) { }
 
   ngOnInit(): void {
     this.getPlatos();
@@ -21,7 +21,10 @@ export class PlatoListComponent implements OnInit {
 
   getPlatos(){
     this.platoService.getPlatos().subscribe(
-      res=> console.log(res),
+      res=> {
+        console.log(res);
+        this.platos = res;
+      },
       err=> console.log(err)
     )
   }

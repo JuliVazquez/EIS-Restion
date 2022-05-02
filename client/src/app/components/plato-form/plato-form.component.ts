@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plato } from '../../interfaces/plato';
+import { PlatoService } from '../../services/plato.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plato-form',
@@ -13,12 +15,21 @@ export class PlatoFormComponent implements OnInit {
     precio : 0
   };
 
-  constructor() { }
+  constructor(
+    private platoService : PlatoService,
+    private router : Router
+     ) { }
 
   ngOnInit(): void {
   }
 
   submitPlato() {
-    console.log(this.plato)
+    this.platoService.createPlato(this.plato).subscribe(
+      res=>{
+        console.log(res);
+        this.router.navigate([`/`]);
+      },
+      err=> console.log(err)
+    );
   }
 }
