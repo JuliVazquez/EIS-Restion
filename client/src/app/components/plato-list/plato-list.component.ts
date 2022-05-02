@@ -23,7 +23,7 @@ export class PlatoListComponent implements OnInit {
     this.platoService.getPlatos().subscribe(
       res=> {
         console.log(res);
-        this.platos = res;
+        //this.platos = res;
       },
       err=> console.log(err)
     )
