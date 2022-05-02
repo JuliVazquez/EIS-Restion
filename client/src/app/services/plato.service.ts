@@ -12,8 +12,8 @@ export class PlatoService {
   constructor( private http : HttpClient) { }
 
   getPlatos(): Observable<Plato[]>{
-    //return this.http.get<Plato[]>(`${this.BASE_URL}/plato`);
-    return this.http.get<Plato[]>(`/plato`);
+    return this.http.get<Plato[]>(`${this.BASE_URL}/plato`);
+    //return this.http.get<Plato[]>(`/plato`);
   }
 
   getPlato(id : string): Observable<Plato>{
@@ -21,8 +21,8 @@ export class PlatoService {
   }
 
   createPlato(plato: Plato): Observable<Plato> {
-    //return this.http.post<Plato>(`${this.BASE_URL}/plato/create`, plato);
-    return this.http.post<Plato>(`/plato/create`, plato);
+    return this.http.post<Plato>(`${this.BASE_URL}/plato/create`, plato);
+    //return this.http.post<Plato>('/plato/create', plato);
   }
 
   deletePlato(id: string): Observable<Plato> {
