@@ -1,5 +1,3 @@
-es (32 sloc)  800 Bytes
-   
 <div *ngFor="let plato of platos" class="card card-body mb-2">
   <div class="row">
     <div class="col-md-8">
@@ -8,12 +6,15 @@ es (32 sloc)  800 Bytes
           id: {{plato._id}}
         </li>
         <li>
-          name: {{plato.nombre}}
+          Nombre: {{plato.nombre}}
         </li>
         <li>
-          description: {{plato.precio}
+          Precio: {{plato.precio}}
         </li>
       </ul>
+      <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)">
+        Eliminar
+      </button>
     </div>
   </div>
 </div>

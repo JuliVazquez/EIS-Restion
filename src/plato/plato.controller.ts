@@ -20,10 +20,10 @@ export class PlatoController {
     @Get('/')
     async getPlatos(@Res() res){
         const platos = await this.platoService.getPlatos();
-        return res.status(HttpStatus.OK).json({
-            message : 'Listado de platos:',
+        return res.status(HttpStatus.OK).json(
+            
             platos
-        })
+        )
     }
 
     //http://localhost:5000/plato/626dfe5fcc062276bde82666

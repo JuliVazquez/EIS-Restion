@@ -22,21 +22,19 @@ export class PlatoListComponent implements OnInit {
   getPlatos(){
     this.platoService.getPlatos().subscribe(
       res=> {
-        console.log(res);
-        //this.platos = res;
+        this.platos = res;
       },
       err=> console.log(err)
     )
   }
 
 
-  //deleteProduct(id: string): void {
-  //  this.platoService.deletePlato(id).subscribe(
-  //      res => {
-  //        console.log(res);
-  //        this.getPlatos();
-  //      },
-  //      err => console.log(err)
-  //    )
-  // }
+  deletePlato(id: string): void {
+    this.platoService.deletePlato(id).subscribe(
+        res => {
+          this.getPlatos();
+        },
+        err => console.log(err)
+      )
+   }
 }
