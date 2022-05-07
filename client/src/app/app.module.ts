@@ -7,13 +7,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PlatoListComponent } from './components/plato-list/plato-list.component';
 import { PlatoFormComponent } from './components/plato-form/plato-form.component';
 import { FormsModule } from '@angular/forms';
+import { MesaListComponent } from './components/mesa-list/mesa-list.component';
+import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PlatoListComponent,
-    PlatoFormComponent
+    PlatoFormComponent,
+    MesaListComponent,
+    MesaFormComponent
   ],
   imports: [
     BrowserModule,

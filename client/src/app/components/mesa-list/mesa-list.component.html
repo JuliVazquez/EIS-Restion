@@ -1,0 +1,23 @@
+<div *ngFor="let mesa of mesas" class="card card-body mb-4">
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <li>
+            id: {{mesa._id}}
+          </li>
+          <li>
+            numero: {{mesa.numeroDeMesa}}
+          </li>
+          <li>
+            ubicacion: {{mesa.ubicacion}}
+          </li>
+          <li>
+            total: {{mesa.total}}
+          </li>
+        </ul>
+        <button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
