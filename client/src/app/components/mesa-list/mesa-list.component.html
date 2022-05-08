@@ -1,4 +1,4 @@
-<div *ngFor="let mesa of mesas" class="card card-body mb-4">
+<div *ngFor="let mesa of mesas" class="card card-body mb-5">
     <div class="row">
       <div class="col-md-8">
         <ul>
@@ -13,6 +13,9 @@
           </li>
           <li>
             total: {{mesa.total}}
+          </li>
+          <li>
+            platos: {{mesa.platos}
           </li>
         </ul>
         <button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)">
