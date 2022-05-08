@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Mesa } from '../../interfaces/mesa'
 import { MesaService } from '../../services/mesa.service';
-import { Router } from '@angular/router';
 import { Plato } from '../../interfaces/plato'
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mesa-form',
@@ -16,10 +16,24 @@ export class MesaFormComponent implements OnInit {
     numeroDeMesa:0,
     total: 0,
     platos: []
-  }
-  constructor(private mesaService: MesaService, private router: Router) { }
+  };
 
-  ngOnInit(): void {
+  edit: boolean=false;
+
+  constructor(private mesaService: MesaService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+    const params = this.activatedRoute.snapshot.params;
+    if (params){
+      this.mesaService.getMesa(params['id']).subscribe(
+      res =>{
+        console.log(res); 
+        this.mesa = res;
+        this.edit=true;
+
+      }
+      )
+    }
   }
 
   submitMesa(){
@@ -30,5 +44,15 @@ export class MesaFormComponent implements OnInit {
     },
     err=> console.log(err)
   );
+}
+
+updateMesa(){
+  delete this.mesa.createdAt;
+  this.mesaService.updateMesa(this.mesa._id!, this.mesa).subscribe(
+    res=>{console.log(res);
+    this.router.navigate([`/mesa`])
+  },
+    err =>console.log(err) 
+  )
 }
 }

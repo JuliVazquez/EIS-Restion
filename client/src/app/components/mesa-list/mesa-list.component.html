@@ -17,9 +17,15 @@
           <li>
             platos: {{mesa.platos}
           </li>
+          <li>
+            created At: {{mesa.createdAt}}
+          </li>
         </ul>
         <button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)">
           Eliminar
+        </button>
+        <button class ="btn btn-secondary" [routerLink]="['/mesa/edit', mesa._id]">
+          Editar
         </button>
       </div>
     </div>

@@ -15,6 +15,9 @@
       <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)">
         Eliminar
       </button>
+      <button class ="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]">
+        Editar
+      </button>
     </div>
   </div>
 </div>

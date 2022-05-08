@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-4 offset-sm-2">
       <div class="card card-body">
-        <form (submit)="submitMesa()">
+        <form (submit)="edit ? updateMesa() : submitMesa()">
           <div class="form-group">
             <input type="text" name="numeroDeMesa" [(ngModel)]="mesa.numeroDeMesa" class="form-control" placeholder="numeroDeMesa">
           </div>

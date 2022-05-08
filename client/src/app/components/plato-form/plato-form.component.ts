@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plato } from '../../interfaces/plato';
 import { PlatoService } from '../../services/plato.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-plato-form',
@@ -15,21 +15,45 @@ export class PlatoFormComponent implements OnInit {
     precio : 0
   };
 
+  edit: boolean=false;
+
   constructor(
     private platoService : PlatoService,
-    private router : Router
+    private router : Router,
+    private activatedRoute: ActivatedRoute
      ) { }
 
-  ngOnInit(): void {
-  }
+     ngOnInit() {
+      const params = this.activatedRoute.snapshot.params;
+      if (params){
+        this.platoService.getPlato(params['id']).subscribe(
+        res =>{
+          console.log(res); 
+          this.plato = res;
+          this.edit=true;
+  
+        }
+        )
+      }
+    }
 
   submitPlato() {
     this.platoService.createPlato(this.plato).subscribe(
       res=>{
         console.log(res);
-        this.router.navigate([`/`]);
+        this.router.navigate([`/plato`]);
       },
       err=> console.log(err)
     );
+  }
+
+  updatePlato(){
+    delete this.plato.createdAt;
+    this.platoService.updatePlato(this.plato._id!, this.plato).subscribe(
+      res=>{console.log(res);
+      this.router.navigate([`/plato`])
+    },
+      err =>console.log(err) 
+    )
   }
 }
