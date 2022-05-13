@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Plato } from '../../interfaces/plato';
 import { PlatoService } from '../../services/plato.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-plato-form',
@@ -20,7 +21,8 @@ export class PlatoFormComponent implements OnInit {
   constructor(
     private platoService : PlatoService,
     private router : Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location
      ) { }
 
      ngOnInit() {
@@ -28,10 +30,10 @@ export class PlatoFormComponent implements OnInit {
       if (params){
         this.platoService.getPlato(params['id']).subscribe(
         res =>{
-          console.log(res); 
+          console.log(res);
           this.plato = res;
           this.edit=true;
-  
+
         }
         )
       }
@@ -41,7 +43,7 @@ export class PlatoFormComponent implements OnInit {
     this.platoService.createPlato(this.plato).subscribe(
       res=>{
         console.log(res);
-        this.router.navigate([`/plato`]);
+        this.router.navigate([`/platos`]);
       },
       err=> console.log(err)
     );
@@ -51,9 +53,12 @@ export class PlatoFormComponent implements OnInit {
     delete this.plato.createdAt;
     this.platoService.updatePlato(this.plato._id!, this.plato).subscribe(
       res=>{console.log(res);
-      this.router.navigate([`/plato`])
+      this.router.navigate([`/platos`])
     },
-      err =>console.log(err) 
+      err =>console.log(err)
     )
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

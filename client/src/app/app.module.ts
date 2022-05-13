@@ -27,7 +27,7 @@ import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

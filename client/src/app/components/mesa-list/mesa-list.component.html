@@ -1,23 +1,31 @@
 <div *ngFor="let mesa of mesas" class="card card-body mb-5">
-    <div class="row">
-      <div class="col-md-8">
-        <ul>
-          <li>
-            numero: {{mesa.numeroDeMesa}}
-          </li>
-          <li>
-            ubicacion: {{mesa.ubicacion}}
-          </li>
-          <li>
-            total: {{mesa.total}}
-          </li>
-        </ul>
-        <button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)">
-          Eliminar
-        </button>
-        <button class ="btn btn-secondary" [routerLink]="['/mesa/edit', mesa._id]">
-          Editar
-        </button>
-      </div>
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li>
+          numero: {{mesa.numeroDeMesa}}
+        </li>
+        <li>
+          ubicacion: {{mesa.ubicacion}}
+        </li>
+        <li>
+          total: {{mesa.total}}
+        </li>
+      </ul>
+      <button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)">
+        Eliminar
+      </button>
+      <button class="btn btn-secondary" [routerLink]="['/mesa/edit', mesa._id]">
+        Editar
+      </button>
     </div>
   </div>
+</div>
+<div><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">
+    Volver
+  </button>
+  <button class="btn btn-primary btn-block" routerLink="/mesa/create" router link active="active"
+    style="border-color: rgb(31, 34, 34); width: 250px;">
+    Crear
+  </button>
+</div>

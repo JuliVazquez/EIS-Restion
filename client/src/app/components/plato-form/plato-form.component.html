@@ -1,7 +1,8 @@
 
 <div class="row">
-    <div class="col-sm-4 offset-sm-4">
-      <div class="card card-body">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="card card-body" style="margin: 30px;">
+        <h1 style="color:antiquewhite; text-align: center;">Edición Platos</h1>
         <form (submit)="edit ? updatePlato() : submitPlato()">
           <div class="form-group">
             <input type="text" name="nombre" [(ngModel)]="plato.nombre" class="form-control" placeholder="Nombre" autofocus>
@@ -9,8 +10,11 @@
           <div class="form-group">
             <input type="text" name="price" [(ngModel)]="plato.precio" class="form-control" placeholder="Precio">
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" style="border-color: rgb(31, 34, 34);">
             Guardar
+          </button>
+          <button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34);">
+            Volver
           </button>
         </form>
       </div>

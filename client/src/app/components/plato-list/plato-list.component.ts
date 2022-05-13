@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plato } from '../../interfaces/plato';
 import { PlatoService } from '../../services/plato.service';
-
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class PlatoListComponent implements OnInit {
 
   platos : Plato[] = [];
 
-  constructor(private platoService: PlatoService) { }
+  constructor(private platoService: PlatoService, private location: Location) { }
 
   ngOnInit(): void {
     this.getPlatos();
@@ -28,7 +28,6 @@ export class PlatoListComponent implements OnInit {
     )
   }
 
-
   deletePlato(id: string): void {
     this.platoService.deletePlato(id).subscribe(
         res => {
@@ -37,4 +36,8 @@ export class PlatoListComponent implements OnInit {
         err => console.log(err)
       )
    }
+
+   goBack(): void {
+    this.location.back();
+  }
 }

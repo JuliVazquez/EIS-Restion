@@ -1,4 +1,4 @@
-<div *ngFor="let plato of platos" class="card card-body mb-2">
+<div *ngFor="let plato of platos">
   <div class="row">
     <div class="col-md-8">
       <ul>
@@ -12,9 +12,16 @@
       <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)">
         Eliminar
       </button>
-      <button class ="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]">
+      <button class="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]">
         Editar
       </button>
     </div>
   </div>
+</div>
+<div><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">
+    Volver
+  </button>
+  <button class="btn btn-primary btn-block" routerLink="/plato/create" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+    Crear
+  </button>
 </div>

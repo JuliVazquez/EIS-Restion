@@ -10,40 +10,40 @@ import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'platos',
-    component: PlatoListComponent
+    component: PlatoListComponent,
   },
   {
     path: 'plato/create',
-    component: PlatoFormComponent
+    component: PlatoFormComponent,
   },
   {
     path: 'plato/edit/:id',
-    component: PlatoFormComponent
+    component: PlatoFormComponent,
   },
   {
     path: 'mesas',
-    component: MesaListComponent
+    component: MesaListComponent,
   },
   {
     path: 'mesa/create',
-    component: MesaFormComponent
+    component: MesaFormComponent,
   },
   {
     path: 'mesa/edit/:id',
-    component: MesaFormComponent
+    component: MesaFormComponent,
   },
   {
     path: 'menuSupervisor',
-    component: SupervisorMenuComponent
-  }
+    component: SupervisorMenuComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
