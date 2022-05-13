@@ -4,14 +4,16 @@ import { PlatoListComponent } from './components/plato-list/plato-list.component
 import { PlatoFormComponent } from './components/plato-form/plato-form.component';
 import { MesaListComponent } from './components/mesa-list/mesa-list.component';
 import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor-menu.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PlatoListComponent
+    component: HomeComponent
   },
   {
-    path: 'plato',
+    path: 'platos',
     component: PlatoListComponent
   },
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
     component: PlatoFormComponent
   },
   {
-    path: 'mesa',
+    path: 'mesas',
     component: MesaListComponent
   },
   {
@@ -33,6 +35,10 @@ const routes: Routes = [
   {
     path: 'mesa/edit/:id',
     component: MesaFormComponent
+  },
+  {
+    path: 'menuSupervisor',
+    component: SupervisorMenuComponent
   }
 ];
 

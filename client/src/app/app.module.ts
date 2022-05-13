@@ -9,6 +9,8 @@ import { PlatoFormComponent } from './components/plato-form/plato-form.component
 import { FormsModule } from '@angular/forms';
 import { MesaListComponent } from './components/mesa-list/mesa-list.component';
 import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor-menu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
     PlatoListComponent,
     PlatoFormComponent,
     MesaListComponent,
-    MesaFormComponent
+    MesaFormComponent,
+    HomeComponent,
+    SupervisorMenuComponent
   ],
   imports: [
     BrowserModule,
