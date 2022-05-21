@@ -3,6 +3,8 @@
   height: 500px;
   background: rgb(46, 44, 44);
   border: 1px solid #000;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 .centered {
   display: flex;
@@ -10,5 +12,6 @@
   justify-content: center;
 }
 .mat-grid-tile {
-  background: lightblue;
+  background:goldenrod;
+  color: #000;
 }
