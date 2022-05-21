@@ -1,0 +1,14 @@
+.box {
+  width: 70%;
+  height: 500px;
+  background: rgb(46, 44, 44);
+  border: 1px solid #000;
+}
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mat-grid-tile {
+  background: lightblue;
+}

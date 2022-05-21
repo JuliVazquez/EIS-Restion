@@ -11,6 +11,10 @@ import { MesaListComponent } from './components/mesa-list/mesa-list.component';
 import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor-menu.component';
+import { GestionMesasComponent } from './components/gestion-mesas/gestion-mesas.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { GestionMesaComponent } from './components/gestion-mesa/gestion-mesa.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,17 @@ import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor
     MesaListComponent,
     MesaFormComponent,
     HomeComponent,
-    SupervisorMenuComponent
+    SupervisorMenuComponent,
+    GestionMesasComponent,
+    GestionMesaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

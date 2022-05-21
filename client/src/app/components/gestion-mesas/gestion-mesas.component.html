@@ -1,0 +1,16 @@
+<div class="centered"><div class="box">
+  <mat-grid-list cols="3" rowHeight="150px" [gutterSize]="'30px'">
+    <mat-grid-tile
+        *ngFor="let mesa of mesas"
+        [colspan]="1"
+        [rowspan]="1"
+        [routerLink]="['/gestionMesa', mesa._id]"
+        >
+      {{mesa.numeroDeMesa}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div></div>
+<div class="centered"><button class="btn btn-primary btn-block" routerLink="/" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+  Volver
+</button></div>
+

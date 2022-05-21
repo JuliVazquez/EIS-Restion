@@ -6,6 +6,8 @@ import { MesaListComponent } from './components/mesa-list/mesa-list.component';
 import { MesaFormComponent } from './components/mesa-form/mesa-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor-menu.component';
+import { GestionMesasComponent } from './components/gestion-mesas/gestion-mesas.component';
+import { GestionMesaComponent } from './components/gestion-mesa/gestion-mesa.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'mesas',
     component: MesaListComponent,
+  },
+  {
+    path: 'gestionMesas',
+    component: GestionMesasComponent,
+  },
+  {
+    path: 'gestionMesa/:id',
+    component: GestionMesaComponent,
   },
   {
     path: 'mesa/create',
