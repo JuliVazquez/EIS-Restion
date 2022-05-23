@@ -46,9 +46,21 @@ export class GestionMesaComponent implements OnInit {
     )
   }
 
+  updateMesa() {
+    delete this.mesa.createdAt;
+    this.mesaService.updateMesa(this.mesa._id!, this.mesa).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate([`/mesas`]);
+      },
+      (err) => console.log(err),
+    );
+  }
+
   selectPlato(plato: Plato){
     this.mesa.platos.push(plato)
     this.mesa.total = this.mesa.total + plato.precio;
+    this.updateMesa()
   }
 
    goBack(): void {
