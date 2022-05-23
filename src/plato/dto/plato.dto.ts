@@ -2,4 +2,5 @@
 export class CreatePlatoDTO {
     readonly nombre: String;
     readonly precio: Number;
+    readonly imagen: String
 }

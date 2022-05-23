@@ -48,6 +48,7 @@ export class GestionMesaComponent implements OnInit {
 
   selectPlato(plato: Plato){
     this.mesa.platos.push(plato)
+    this.mesa.total = this.mesa.total + plato.precio;
   }
 
    goBack(): void {

@@ -13,7 +13,8 @@ export class PlatoFormComponent implements OnInit {
 
   plato : Plato = {
     nombre :"",
-    precio : 0
+    precio : 0,
+    imagen : ""
   };
 
   edit: boolean=false;
