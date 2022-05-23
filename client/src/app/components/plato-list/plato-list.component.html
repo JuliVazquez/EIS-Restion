@@ -9,6 +9,9 @@
           Precio: {{plato.precio}}
         </li>
       </ul>
+      <div class="col-md-4">
+        <img [src]="plato.imagen" class="card-img">
+      </div>
       <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)">
         Eliminar
       </button>
@@ -25,3 +28,5 @@
     Crear
   </button>
 </div>
+
+
