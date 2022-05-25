@@ -4,9 +4,13 @@
         *ngFor="let mesa of mesas"
         [colspan]="1"
         [rowspan]="1"
-        [routerLink]="['/gestionMesa', mesa._id]"
-        >
-      {{mesa.numeroDeMesa}}
+        [routerLink]="['/gestionMesa', mesa._id]">
+        <mat-grid-tile-header>
+        Mesa {{mesa.numeroDeMesa}}
+        </mat-grid-tile-header>
+        <mat-grid-tile-footer>Total $
+          {{mesa.total}}
+        </mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
 </div></div>

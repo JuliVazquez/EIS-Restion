@@ -51,7 +51,7 @@ export class GestionMesaComponent implements OnInit {
     this.mesaService.updateMesa(this.mesa._id!, this.mesa).subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate([`/mesas`]);
+        this.router.navigate([`/gestionMesas`]);
       },
       (err) => console.log(err),
     );
@@ -60,6 +60,14 @@ export class GestionMesaComponent implements OnInit {
   selectPlato(plato: Plato){
     this.mesa.platos.push(plato)
     this.mesa.total = this.mesa.total + plato.precio;
+    this.updateMesa()
+  }
+
+  deletePlato(plato: Plato){
+    this.mesa.platos.forEach( (item, index) => {
+      if(item.nombre === plato.nombre) this.mesa.platos.splice(index,1);
+    });
+    this.mesa.total = this.mesa.total-plato.precio;
     this.updateMesa()
   }
 
