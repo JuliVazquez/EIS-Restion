@@ -27,3 +27,10 @@ justify-content: center;
   font-family: fangsong;
   font-size: 91px;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
