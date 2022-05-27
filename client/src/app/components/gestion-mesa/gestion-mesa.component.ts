@@ -83,7 +83,13 @@ export class GestionMesaComponent implements OnInit {
   }
 
   cobrar():void {
-    alert("Tu cuenta es: " + this.mesa.total)
+    let mensaje = " "
+    this.mesa.platos.forEach( (item, index) => {
+      mensaje += item.nombre + " " + item.precio
+      mensaje += "\r"
+    });
+    
+    alert("Platos consumidos: \r " + mensaje + "Tu monto total a pagar es de: " + this.mesa.total);
     this.mesa.total=0;
     this.mesa.platos= [];
     this.updateMesa()
