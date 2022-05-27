@@ -60,18 +60,30 @@ export class GestionMesaComponent implements OnInit {
   selectPlato(plato: Plato){
     this.mesa.platos.push(plato)
     this.mesa.total = this.mesa.total + plato.precio;
+    window.alert("Se agrego el plato "+plato.nombre+" por $"+plato.precio);
     this.updateMesa()
   }
 
   deletePlato(plato: Plato){
+    let find = false;
     this.mesa.platos.forEach( (item, index) => {
-      if(item.nombre === plato.nombre) this.mesa.platos.splice(index,1);
+      if(item.nombre === plato.nombre){
+        this.mesa.platos.splice(index,1);
+        this.mesa.total = this.mesa.total-plato.precio;
+        find = true;
+      }
     });
-    this.mesa.total = this.mesa.total-plato.precio;
+
+    if(find){
+      window.alert("Se quito el plato "+plato.nombre+" por $"+plato.precio);
+    }else{
+      window.alert("La mesa no tiene un pedido del plato "+plato.nombre);
+    }
     this.updateMesa()
   }
 
-   goBack(): void {
+  
+  goBack(): void {
     this.location.back();
   }
 
