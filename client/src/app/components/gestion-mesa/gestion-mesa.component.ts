@@ -82,7 +82,13 @@ export class GestionMesaComponent implements OnInit {
     this.updateMesa()
   }
 
-  
+  cobrar():void {
+    alert("Tu cuenta es: " + this.mesa.total)
+    this.mesa.total=0;
+    this.mesa.platos= [];
+    this.updateMesa()
+  }
+
   goBack(): void {
     this.location.back();
   }
