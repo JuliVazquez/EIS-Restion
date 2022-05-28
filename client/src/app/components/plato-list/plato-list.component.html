@@ -1,3 +1,8 @@
+<div id="outer">
+  <div class="inner"><button class="btn btn-primary btn-block" routerLink="/plato/create" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">Crear</button></div>
+  <div class="inner"><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">Volver</button></div>
+</div>
+
 <div *ngFor="let plato of platos">
   <div class="row">
     <div class="col-md-8">
@@ -12,21 +17,12 @@
       <div class="col-md-4">
         <img [src]="plato.imagen" class="card-img">
       </div>
-      <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)">
-        Eliminar
-      </button>
-      <button class="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]">
-        Editar
-      </button>
+      
+      <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)" style="border-color: rgb(31, 34, 34); width: 120px;">Eliminar</button></div>
+      <div class="inner"><button class="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]" style="width: 120px">Editar</button></div>
     </div>
   </div>
 </div>
-<div><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">
-    Volver
-  </button>
-  <button class="btn btn-primary btn-block" routerLink="/plato/create" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
-    Crear
-  </button>
-</div>
+
 
 

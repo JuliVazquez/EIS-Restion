@@ -34,7 +34,6 @@ export class PlatoFormComponent implements OnInit {
           console.log(res);
           this.plato = res;
           this.edit=true;
-
         }
         )
       }

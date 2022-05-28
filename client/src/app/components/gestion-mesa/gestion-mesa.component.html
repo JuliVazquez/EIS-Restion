@@ -1,3 +1,9 @@
+
+<div id="outer">
+  <div class="inner"><button class="btn btn-primary btn-block" (click)="cobrar()"  style="border-color: rgb(31, 34, 34); width: 250px;">Cobrar</button></div>
+  <div class="inner"><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">Volver</button></div>
+</div>
+
 <div *ngFor="let plato of platos">
   <div class="row">
     <div class="col-md-8">
@@ -12,20 +18,22 @@
       <div class="col-md-4">
         <img [src]="plato.imagen" class="card-img">
       </div>
-      <button type="submit" class="btn btn-primary btn-block" (click)="selectPlato(plato!)">
-        Seleccionar
-      </button>
-      <button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato!)">
-        Eliminar
-      </button>
+
+      <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="selectPlato(plato!)" style="width: 140px;">Agregar plato</button></div>
+      <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato!)" style="width: 140px;">Eliminar plato</button></div>
     </div>
   </div>
 </div>
-<div><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">
-    Volver
-  </button>
+
+<div *ngFor="let plato of mesa.platos">
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li>
+          Nombre: {{plato.nombre}} -- $ {{plato.precio}}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
-<div><button class="btn btn-primary btn-block" (click)="cobrar()" style="border-color: rgb(31, 34, 34); width: 250px;">
-  Cobrar
-</button>
-</div>
+
