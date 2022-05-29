@@ -15,6 +15,7 @@ import { GestionMesasComponent } from './components/gestion-mesas/gestion-mesas.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { GestionMesaComponent } from './components/gestion-mesa/gestion-mesa.component';
+import { GestionEliminarProductoComponent } from './components/gestion-eliminar-producto/gestion-eliminar-producto.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GestionMesaComponent } from './components/gestion-mesa/gestion-mesa.com
     HomeComponent,
     SupervisorMenuComponent,
     GestionMesasComponent,
-    GestionMesaComponent
+    GestionMesaComponent,
+    GestionEliminarProductoComponent
   ],
   imports: [
     BrowserModule,

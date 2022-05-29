@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SupervisorMenuComponent } from './components/supervisor-menu/supervisor-menu.component';
 import { GestionMesasComponent } from './components/gestion-mesas/gestion-mesas.component';
 import { GestionMesaComponent } from './components/gestion-mesa/gestion-mesa.component';
+import { GestionEliminarProductoComponent} from './components/gestion-eliminar-producto/gestion-eliminar-producto.component'
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'gestionMesa/:id',
     component: GestionMesaComponent,
+  },
+  {
+    path: 'gestionEliminarProducto/:id',
+    component: GestionEliminarProductoComponent,
   },
   {
     path: 'mesa/create',

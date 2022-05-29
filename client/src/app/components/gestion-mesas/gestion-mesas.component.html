@@ -4,7 +4,13 @@
         *ngFor="let mesa of mesas"
         [colspan]="1"
         [rowspan]="1"
-        [routerLink]="['/gestionMesa', mesa._id]">
+        >
+        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionMesa', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+          Agregar Platos
+        </button></div>
+        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionEliminarProducto', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+          Eliminar Platos
+        </button></div>
         <mat-grid-tile-header>
         Mesa {{mesa.numeroDeMesa}}
         </mat-grid-tile-header>

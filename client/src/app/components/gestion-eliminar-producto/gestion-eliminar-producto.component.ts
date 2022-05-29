@@ -7,10 +7,11 @@ import { Mesa } from '../../interfaces/mesa';
 import { MesaService } from '../../services/mesa.service';
 
 @Component({
-  templateUrl: './gestion-mesa.component.html',
-  styleUrls: ['./gestion-mesa.component.css']
+  selector: 'app-gestion-eliminar-producto',
+  templateUrl: './gestion-eliminar-producto.component.html',
+  styleUrls: ['./gestion-eliminar-producto.component.css']
 })
-export class GestionMesaComponent implements OnInit {
+export class GestionEliminarProductoComponent implements OnInit {
 
   mesa: Mesa = {
     ubicacion: '',
@@ -38,12 +39,7 @@ export class GestionMesaComponent implements OnInit {
   }
 
   getPlatos(){
-    this.platoService.getPlatos().subscribe(
-      res=> {
-        this.platos = res;
-      },
-      err=> console.log(err)
-    )
+    this.mesa.platos
   }
 
   updateMesa() {
@@ -57,28 +53,18 @@ export class GestionMesaComponent implements OnInit {
     );
   }
 
-  selectPlato(plato: Plato){
-    this.mesa.platos.push(plato)
-    this.mesa.total = this.mesa.total + plato.precio;
-    window.alert("Se agrego el plato "+plato.nombre+" por $"+plato.precio);
-    this.updateMesa()
-  }
-
   deletePlato(plato: Plato){
     let find = false;
     this.mesa.platos.forEach( (item, index) => {
-      if(item.nombre === plato.nombre){
+      if(item._id === plato._id && find == false){
         this.mesa.platos.splice(index,1);
         this.mesa.total = this.mesa.total-plato.precio;
         find = true;
       }
     });
 
-    if(find){
       window.alert("Se quito el plato "+plato.nombre+" por $"+plato.precio);
-    }else{
-      window.alert("La mesa no tiene un pedido del plato "+plato.nombre);
-    }
+
     this.updateMesa()
   }
 
@@ -100,3 +86,7 @@ export class GestionMesaComponent implements OnInit {
   }
 
 }
+
+
+ 
+
