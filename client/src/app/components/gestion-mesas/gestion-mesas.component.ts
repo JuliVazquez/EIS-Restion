@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class GestionMesasComponent implements OnInit {
   mesas: Mesa[] = [];
-
+  
   constructor(private mesaService: MesaService, private location: Location) {}
 
   ngOnInit(): void {
@@ -20,6 +20,30 @@ export class GestionMesasComponent implements OnInit {
     this.mesaService.getMesas().subscribe(
       (res) => {
         this.mesas = res;
+      },
+      (err) => console.log(err),
+    );
+  }
+
+  cobrar(mesa : Mesa):void {
+    let mensaje = " "
+    mesa.platos.forEach( (item, index) => {
+      mensaje += item.nombre + " " + item.precio
+      mensaje += "\r"
+    });
+    
+    alert("Platos consumidos: \r " + mensaje + "Tu monto total a pagar es de: " + mesa.total);
+    mesa.total=0;
+    mesa.platos= [];
+    this.updateMesa(mesa);
+  }
+
+  updateMesa(mesa : Mesa) {
+    delete mesa.createdAt;
+    this.mesaService.updateMesa(mesa._id!, mesa).subscribe(
+      (res) => {
+        console.log(res);
+        //this.router.navigate([`/gestionMesas`]);
       },
       (err) => console.log(err),
     );

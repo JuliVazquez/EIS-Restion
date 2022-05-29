@@ -5,11 +5,14 @@
         [colspan]="1"
         [rowspan]="1"
         >
-        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionMesa', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionMesa', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 100px;">
           Agregar Platos
         </button></div>
-        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionEliminarProducto', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+        <div class="centered"><button class="btn btn-primary btn-block" [routerLink]="['/gestionEliminarProducto', mesa._id]" router link active="active" style="border-color: rgb(31, 34, 34); width: 100px;">
           Eliminar Platos
+        </button></div>
+        <div class="centered"><button class="btn btn-primary btn-block" (click)="cobrar(this.mesa!)" router link active="active" style="border-color: rgb(31, 34, 34); width: 100px;">
+          Cobrar
         </button></div>
         <mat-grid-tile-header>
         Mesa {{mesa.numeroDeMesa}}
@@ -20,7 +23,7 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div></div>
-<div class="centered"><button class="btn btn-primary btn-block" routerLink="/" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">
+<div class="centered"><button class="btn btn-primary btn-block" routerLink="/" router link active="active" style="border-color: rgb(31, 34, 34); width: 300px;">
   Volver
 </button></div>
 
