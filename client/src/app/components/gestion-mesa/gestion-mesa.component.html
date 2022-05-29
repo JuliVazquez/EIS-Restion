@@ -4,6 +4,9 @@
   <div class="inner"><button class="btn btn-primary btn-block" (click)="goBack()" style="border-color: rgb(31, 34, 34); width: 250px;">Volver</button></div>
 </div>
 
+<div class="row">
+  <div class="col-md-8">
+
 <div *ngFor="let plato of platos">
   <div class="row">
     <div class="col-md-8">
@@ -15,7 +18,7 @@
           Precio: {{plato.precio}}
         </li>
       </ul>
-      <div class="col-md-4">
+      <div class="col-md-8">
         <img [src]="plato.imagen" class="card-img">
       </div>
 
@@ -24,16 +27,35 @@
     </div>
   </div>
 </div>
-
-<div *ngFor="let plato of mesa.platos">
-  <div class="row">
-    <div class="col-md-8">
-      <ul>
-        <li>
-          Nombre: {{plato.nombre}} -- $ {{plato.precio}}
-        </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
+<div class="col-md-4">
+  <div id="register">
+    <div id="ticket">
+      <h1>TICKET</h1>
+      <h2>RESTION</h2>
+      <h3>CUIT: 023265487456</h3>
+  
+      <table>
+      <tbody id="entries">
+        <div *ngFor="let plato of mesa.platos">
+          <div class="row">
+            <div class="col-md-4">
+              <ul>
+                <li>
+                  {{plato.nombre}}.........$ {{plato.precio}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </tbody>
+    <tfoot>
+      <tr>
+          <th>Total</th>
+          <th id="total"> $ {{mesa.total}}</th>
+      </tr>
+    </tfoot>
+    </table>
+  </div>
+</div>
