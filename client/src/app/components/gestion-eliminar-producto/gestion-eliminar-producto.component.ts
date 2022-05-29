@@ -68,19 +68,6 @@ export class GestionEliminarProductoComponent implements OnInit {
     this.updateMesa()
   }
 
-  cobrar():void {
-    let mensaje = " "
-    this.mesa.platos.forEach( (item, index) => {
-      mensaje += item.nombre + " " + item.precio
-      mensaje += "\r"
-    });
-    
-    alert("Platos consumidos: \r " + mensaje + "Tu monto total a pagar es de: " + this.mesa.total);
-    this.mesa.total=0;
-    this.mesa.platos= [];
-    this.updateMesa()
-  }
-
   goBack(): void {
     this.location.back();
   }

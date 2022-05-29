@@ -64,7 +64,7 @@ export class GestionMesaComponent implements OnInit {
     this.updateMesa()
   }
 
-  deletePlato(plato: Plato){
+  /*deletePlato(plato: Plato){
     let find = false;
     this.mesa.platos.forEach( (item, index) => {
       if(item.nombre === plato.nombre){
@@ -81,6 +81,7 @@ export class GestionMesaComponent implements OnInit {
     }
     this.updateMesa()
   }
+  */
 
   cobrar():void {
     let mensaje = " "
