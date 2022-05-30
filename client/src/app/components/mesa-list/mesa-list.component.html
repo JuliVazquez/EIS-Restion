@@ -1,27 +1,30 @@
-<div id="outer">
-  <div class="inner"><button class="btn btn-primary btn-block" routerLink="/mesa/create" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">Crear</button></div>
-  <div class="inner"><button class="btn btn-primary btn-block" routerLink="/menuSupervisor" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">Volver</button></div>
-</div>
-
-<div *ngFor="let mesa of mesas" class="card card-body mb-5">
-  <div class="row">
-    <div class="col-md-8">
-      <ul>
-        <li>
-          Mesa Nro. : {{mesa.numeroDeMesa}}
-        </li>
-        <li>
-          Ubicacion : {{mesa.ubicacion}}
-        </li>
-        <li>
-          Toltal consumido : {{mesa.total}}
-        </li>
-      </ul>
-      <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)" style="border-color: rgb(31, 34, 34); width: 120px;">Eliminar</button></div>
-      <div class="inner"><button class="btn btn-secondary" [routerLink]="['/mesa/edit', mesa._id]" style="width: 120px">Editar</button>
+<div class="row centered">
+  <div class="column"><button class="btn btn-primary btn-block homebtn" routerLink="/mesa/create" router link
+      active="active">Crear</button></div>
+  <div class="column" style="overflow: auto; max-height: 550px;">
+    <div *ngFor="let mesa of mesas" class="card card-body mb-5">
+      <div class="box">
+        <div class="col-md-8" style="display:flex;">
+          <ul>
+            <li>
+              Mesa Nro. : {{mesa.numeroDeMesa}}
+            </li>
+            <li>
+              Ubicacion : {{mesa.ubicacion}}
+            </li>
+            <li>
+              Toltal consumido : {{mesa.total}}
+            </li>
+          </ul>
+          <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="deleteMesa(mesa._id!)"
+              style="border-color: rgb(31, 34, 34); width: 120px;">Eliminar</button></div>
+          <div class="inner"><button class="btn btn-secondary" [routerLink]="['/mesa/edit', mesa._id]"
+              style="width: 120px">Editar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="column"><button class="btn btn-primary btn-block homebtn" routerLink="/menuSupervisor" router link
+      active="active">Volver</button></div>
 </div>
-
-
-

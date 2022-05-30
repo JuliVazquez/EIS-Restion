@@ -22,8 +22,8 @@ justify-content: center;
 .title {
   text-align: center;
   color: aliceblue;
-  padding: 0.75rem 1rem calc(54px - 0.75rem - 30px);
+  padding: 40px;
   margin: 30px;
-  font-family: revert;
+  font-family: fangsong;
   font-size: 59px;
 }

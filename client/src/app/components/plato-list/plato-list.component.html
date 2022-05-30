@@ -1,28 +1,33 @@
-<div id="outer">
-  <div class="inner"><button class="btn btn-primary btn-block" routerLink="/plato/create" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">Crear</button></div>
-  <div class="inner"><button class="btn btn-primary btn-block" routerLink="/menuSupervisor" router link active="active" style="border-color: rgb(31, 34, 34); width: 250px;">Volver</button></div>
-</div>
+<div class="row centered">
+  <div class="column"><button class="btn btn-primary btn-block homebtn" routerLink="/plato/create" router link
+      active="active">Crear</button></div>
+  <div class="column" style="overflow: auto; max-height: 550px;">
+    <div *ngFor="let plato of platos">
+      <div class="box">
+        <div class="col-md-8" style="display:flex;">
+          <div>
+          <ul style="min-height: 59px;">
+            <li>
+              {{plato.nombre}}
+            </li>
+            <li>
+              $ {{plato.precio}}
+            </li>
+          </ul>
+          <div><button class="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]"
+            style="width: 120px">Editar</button></div>
+          </div>
+          <div style="margin-left: 18px;"><div class="image">
+            <img [src]="plato.imagen" class="card-img" style="height: 76px">
+          </div>
 
-<div *ngFor="let plato of platos">
-  <div class="row">
-    <div class="col-md-8">
-      <ul>
-        <li>
-          Nombre: {{plato.nombre}}
-        </li>
-        <li>
-          Precio: {{plato.precio}}
-        </li>
-      </ul>
-      <div class="col-md-4">
-        <img [src]="plato.imagen" class="card-img">
+          <div><button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)"
+              style="border-color: rgb(31, 34, 34); width: 120px;">Eliminar</button></div></div>
+        </div>
       </div>
-      
-      <div class="inner"><button type="submit" class="btn btn-primary btn-block" (click)="deletePlato(plato._id!)" style="border-color: rgb(31, 34, 34); width: 120px;">Eliminar</button></div>
-      <div class="inner"><button class="btn btn-secondary" [routerLink]="['/plato/edit', plato._id]" style="width: 120px">Editar</button></div>
     </div>
   </div>
+
+  <div class="column"><button class="btn btn-primary btn-block homebtn" routerLink="/menuSupervisor" router link
+      active="active">Volver</button></div>
 </div>
-
-
-
