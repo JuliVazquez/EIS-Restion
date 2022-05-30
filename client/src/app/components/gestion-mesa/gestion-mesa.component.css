@@ -1,13 +1,47 @@
-#outer
-{
-  margin-top: 20px;
-    width:100%;
-    text-align:center
+.centered {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
-.inner
-{
-    display: inline-block;
+
+.box {
+  width: 95%;
+  height: 158px;
+  background: rgb(46, 44, 44);
+  border: 1px solid rgb(70, 69, 69);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
 }
+
+.homebtn {
+  font-size: 28px;
+  height: 260px;
+  width: 300px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 20px;
+  font-family: revert;
+  border-radius: 1.25rem;
+  border-color: rgb(31, 34, 34);
+}
+.homebtn:hover {
+  color: #fff;
+  background-color: #282c2f;
+  border-color: #232628;
+}
+
+.column {
+  float: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 body {
   background: #EEE;
@@ -17,8 +51,10 @@ body {
   padding: 0;
 }
 #register {
-  width: 35em;
+  width: 400px;
   margin: auto;
+  overflow: auto;
+  max-height: 550px;
 }
 #ticket {
   background: white;
