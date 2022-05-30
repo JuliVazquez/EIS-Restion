@@ -26,13 +26,18 @@ export class GestionMesasComponent implements OnInit {
   }
 
   cobrar(mesa : Mesa):void {
-    let mensaje = " "
+
+    if(mesa.platos.length==0){
+      alert("La mesa no registra consumos.");
+      return;
+    }
+    let mensaje=""
     mesa.platos.forEach( (item, index) => {
-      mensaje += item.nombre + " " + item.precio
+      mensaje += item.nombre + " --> $ " + item.precio
       mensaje += "\r"
     });
     
-    alert("Platos consumidos: \r " + mensaje + "Tu monto total a pagar es de: " + mesa.total);
+    alert("Platos consumidos: \r " + mensaje + "Tu monto total a pagar es de: $ " + mesa.total);
     mesa.total=0;
     mesa.platos= [];
     this.updateMesa(mesa);

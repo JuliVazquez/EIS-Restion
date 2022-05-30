@@ -83,10 +83,10 @@ export class GestionMesaComponent implements OnInit {
   }
   */
 
-  cobrar():void {
-    let mensaje = " "
+  /*cobrar():void {
+    let mensaje=""
     this.mesa.platos.forEach( (item, index) => {
-      mensaje += item.nombre + " " + item.precio
+      mensaje += item.nombre + " --> $ " + item.precio
       mensaje += "\r"
     });
     
@@ -95,7 +95,7 @@ export class GestionMesaComponent implements OnInit {
     this.mesa.platos= [];
     this.updateMesa()
   }
-
+  */
   goBack(): void {
     this.location.back();
   }
