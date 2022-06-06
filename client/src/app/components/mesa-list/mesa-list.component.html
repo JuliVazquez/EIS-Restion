@@ -1,7 +1,9 @@
-<div class="row centered">
+<div class="row centered" style="
+max-width: 100%;
+">
   <div class="column"><button class="btn btn-primary btn-block homebtn" routerLink="/mesa/create" router link
       active="active">Crear</button></div>
-  <div class="column" style="overflow: auto; max-height: 550px; width: 350px">
+  <div class="column" style="overflow: auto; max-height: 600px; width: 350px">
     <div *ngFor="let mesa of mesas">
       <div class="box" style="display: flex; justify-content: center;">
         <div>

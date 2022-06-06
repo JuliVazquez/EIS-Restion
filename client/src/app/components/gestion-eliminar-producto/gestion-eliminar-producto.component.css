@@ -49,14 +49,13 @@ body {
   padding: 0;
 }
 #register {
-  width: 400px;
+  width: 360px;
   margin: auto;
   overflow: auto;
-  max-height: 550px;
+  max-height: 590px;
 }
 #ticket {
   background: white;
-  margin: 0 1em;
   padding: 1em;
   box-shadow: 0 0 5px rgba(0,0,0,.25);
 }
